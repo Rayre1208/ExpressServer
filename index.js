@@ -6,7 +6,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get("/test", (req, res) => {
   res.json({
-    message: "test work newest A ver!!",
+    message: "test work newest B ver!!",
   });
 });
 

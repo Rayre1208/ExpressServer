@@ -4,9 +4,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/test", (req, res) => {
+app.get("/", (req, res) => {
   res.json({
-    message: "test work newest B ver!!",
+    message: "test work newest C ver!!",
   });
 });
 

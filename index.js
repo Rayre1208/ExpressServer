@@ -1,8 +1,4 @@
-const { default: axios } = require("axios");
-const cheerio = require("cheerio");
-const QS = require("qs");
 const express = require("express");
-
 const app = express();
 
 app.use(express.json());
@@ -13,7 +9,6 @@ app.get("/test", (req, res) => {
     message: "test work newest A ver!!",
   });
 });
-
 
 const port = process.env.PORT || 8080;
 

@@ -15,3 +15,4 @@ const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Express Server started on port ${port}`);
 });
+//node index.js (npm i nodemon and express first)

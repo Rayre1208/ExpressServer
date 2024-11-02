@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 const responseData = require('./response.js');
 
 app.get('/', (req, res) => {
-  res.header('http://localhost:8084');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8084');
   res.json(responseData); // 將 responseData 作為 JSON 格式回應
 });
 

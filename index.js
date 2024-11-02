@@ -18,3 +18,5 @@ app.listen(port, () => {
   console.log(`Express Server started on port ${port}`);
 });
 //node index.js (npm i nodemon and express first)
+
+//幾筆資料 資料體該如何形變

@@ -11,13 +11,15 @@ const responseData = require('./response.js');
 app.get('/', (req, res) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:8084');
 
-     // 獲取查詢參數，並轉換為小寫，方便進行不區分大小寫的搜尋
+  // 獲取查詢參數，並轉換為小寫
   const query = req.query.query?.toLowerCase();
 
-  // 篩選 products 陣列，只保留 randomtutors.name.full 包含查詢關鍵字的物件
-  const filteredProducts = responseData.products.filter(product => {
-    return product.randomtutors.name.full.toLowerCase().includes(query);
-  });
+  // 如果沒有查詢參數，則返回所有產品
+  const filteredProducts = query
+    ? responseData.products.filter(product => {
+        return product.randomtutors.name.full.toLowerCase().includes(query);
+      })
+    : responseData.products;
 
   res.json({ products: filteredProducts });
 });

@@ -6,21 +6,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // 引入 response.js 中的 JSON 資料
-const responseData = require('./response.js');
+const responseproducts = require('./mockData/products');
 
 app.get('/products', (req, res) => {
   // 可考慮不使用 或是 使用 CORS middleware 套件 搭配環境變數
-  res.header('Access-Control-Allow-Origin', 'http://localhost:8084');
+  //res.header('Access-Control-Allow-Origin', 'http://localhost:8084');
 
   // 獲取查詢參數，並轉換為小寫
   const query = req.query.query?.toLowerCase();
 
   // 如果沒有查詢參數，則返回所有產品
   const filteredProducts = query
-    ? responseData.products.filter(product => {
+    ? responseproducts.products.filter(product => {
         return product.randomtutors.name.full.toLowerCase().includes(query);
       })
-    : responseData.products;
+    : responseproducts.products;
 
   res.json({ products: filteredProducts });
 });

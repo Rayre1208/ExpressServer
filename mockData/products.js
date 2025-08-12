@@ -4972,4 +4972,4 @@ const productsData = {
     ]
 };
 
-  module.exports = responseData;
+  module.exports = productsData;
